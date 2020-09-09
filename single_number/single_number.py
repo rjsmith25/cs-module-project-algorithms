@@ -3,9 +3,15 @@ Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
 def single_number(arr):
-    # Your code here
+    copyList = arr.copy()
+    for item in arr:
+        times_appeared = copyList.count(item)
+        if times_appeared == 1:
+            return item
 
-    pass
+
+
+
 
 
 if __name__ == '__main__':
