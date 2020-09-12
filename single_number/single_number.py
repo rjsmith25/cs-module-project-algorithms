@@ -3,11 +3,13 @@ Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
 def single_number(arr):
-    copyList = arr.copy()
-    for item in arr:
-        times_appeared = copyList.count(item)
-        if times_appeared == 1:
-            return item
+    s = set()
+    for x in arr:
+        if x in s:
+            s.remove(x) #O(1)
+        else:
+            s.add(x) #O(1)
+    return list(s)[0]
 
 
 
